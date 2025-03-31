@@ -1,3 +1,4 @@
+
 /* global */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
@@ -86,6 +87,12 @@ a{
     position: relative;
     padding-left: 10px;
 }
+.roblox-icon {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+}
+
 
 /* media queres */
 @media(max-width:780px){
@@ -102,3 +109,5 @@ a{
         padding-top: 2rem;
     }
 }
+
+
