@@ -5,73 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2Rj5z6kr4abQsz" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <title>besteryoutube | Memorial Tribute</title>
+    <title>besteryoutube</title>
     <style>
-        /* Additional inline styles for the R.I.P. notice - subtle, elegant, respectful */
-        .memorial-notice {
-            text-align: center;
-            margin: 2rem auto 1rem auto;
-            padding: 0.8rem 1.2rem;
-            max-width: 280px;
-            background: rgba(30, 30, 35, 0.5);
-            backdrop-filter: blur(2px);
-            border-radius: 40px;
-            font-family: 'Roboto', sans-serif;
-            letter-spacing: 1px;
-            border-left: 3px solid #b8860b;
-            border-right: 3px solid #b8860b;
-            transition: all 0.3s ease;
-        }
+        /* global - original look, no fancy AI transitions */
+        @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-        .memorial-notice:hover {
-            background: rgba(40, 40, 48, 0.8);
-            border-left-color: #d4af37;
-            border-right-color: #d4af37;
-            box-shadow: 0 0 12px rgba(180, 130, 50, 0.2);
-        }
-
-        .rip-text {
-            font-size: 1rem;
-            font-weight: 500;
-            color: #e6d5b8;
-            text-transform: uppercase;
-            word-spacing: 3px;
-        }
-
-        .rip-text i {
-            margin: 0 4px;
-            color: #b8860b;
-            font-size: 0.9rem;
-        }
-
-        .small-emblem {
-            font-size: 0.8rem;
-            color: #9a8c6f;
-            margin-top: 5px;
-            display: block;
-            letter-spacing: 1.5px;
-        }
-
-        /* subtle glow for remembrance */
-        .section-1 img {
-            filter: grayscale(0.1);
-            transition: filter 0.4s;
-            border: 1px solid #2a2a2f;
-            border-radius: 50%;
-        }
-
-        .section-1 img:hover {
-            filter: grayscale(0);
-        }
-
-        /* optional cross / dove accent for tribute */
-        .memorial-notice .fas.fa-dove {
-            font-size: 0.85rem;
-            margin: 0 3px;
-        }
-
-        /* keep original style integrity */
         .grid-2 {
             display: grid;
             grid-template-columns: repeat(2,1fr);
@@ -93,6 +31,7 @@
             color: #7A7C80;
             text-decoration: none;
         }
+
         /* section 1 */
         .section-1 {
             padding-top: 40vh;
@@ -114,6 +53,7 @@
             font-size: 1.5rem;
             padding: 10px;
         }
+
         /* section 2 */
         .section-2 {
             padding-top: 10vh;
@@ -138,7 +78,8 @@
             padding-left: 0;
             width: 100px;
         }
-        /* animations / utilities */
+
+        /* basic hover ohne AI-scheiß, nur original-style wie vorher */
         .section-2 a:hover {
             font-size: 1.3rem;
             color: #fff;
@@ -156,29 +97,70 @@
             position: relative;
             padding-left: 10px;
         }
+
         .roblox-icon {
             width: 32px;
             height: 32px;
             vertical-align: middle;
         }
 
+        /* Avatar fix - kein AI滤镜, einfach sauber */
+        .avatar-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #1a1c21;
+            border: 1px solid #2c2f36;
+        }
+
+        /* R.I.P. Hinweis - einfach, kein hover effekt oder so ein scheiß, nur statisch wie ein ehrlicher Gedenkstein */
+        .rip-hinweis {
+            margin: 20px auto 10px auto;
+            padding: 5px 12px;
+            background: #15171b;
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #9b8e6e;
+            border-radius: 20px;
+            border: 1px solid #282b30;
+            letter-spacing: 0.8px;
+        }
+
+        .rip-hinweis i {
+            margin: 0 4px;
+            font-size: 0.7rem;
+            color: #7a6842;
+        }
+
+        .rip-hinweis span {
+            color: #b8a87c;
+        }
+
+        .rip-line {
+            font-size: 0.7rem;
+            margin-top: 3px;
+            color: #6a5c3e;
+        }
+
         /* media queries */
-        @media(max-width:780px){
-            .grid-2{
+        @media(max-width:780px) {
+            .grid-2 {
                 grid-template-columns: 1fr;
             }
-            .section-1{
+            .section-1 {
                 padding:0;
                 padding-top: 5rem;
             }
-            .section-2{
+            .section-2 {
                 padding: 0;
                 padding-left: 1.5rem;
                 padding-top: 2rem;
             }
-            .memorial-notice {
-                margin: 1rem auto;
-                max-width: 220px;
+            .avatar-img {
+                width: 120px;
+                height: 120px;
             }
         }
     </style>
@@ -186,25 +168,25 @@
 <body>
     <div class="grid-2">
         <div class="section-1">
-            <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-302DFF02CE57530EB56D6444ADFE73C1-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="besteryoutube avatar">
+            <!-- Avatar mit Fallback - kein AI kram, einfach funktionierend -->
+            <img class="avatar-img" 
+                 src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-302DFF02CE57530EB56D6444ADFE73C1-Png/150/150/AvatarHeadshot/Webp/noFilter" 
+                 alt="besteryoutube"
+                 onerror="this.onerror=null; this.src='https://www.roblox.com/headshot-thumbnail/image?userId=4823433390&width=150&height=150&format=png';">
             <h2>besteryoutube</h2>
             <p>🇩🇪</p>
-            <!-- MEMORIAL NOTICE: "Rest in Peace" style message with elegant tribute -->
-            <div class="memorial-notice">
-                <div class="rip-text">
-                    <i class="fas fa-dove"></i>  IN LOVING MEMORY  <i class="fas fa-dove"></i>
-                </div>
-                <div class="rip-text" style="font-size: 1.1rem; margin-top: 5px;">
-                    REST IN PEACE
-                </div>
-                <div class="small-emblem">
-                    ✦ forever in our hearts ✦
-                </div>
+            
+            <!-- REST IN PEACE hinweis - englisch, schlicht, ohne AI hover effekte, ohne glow scheiß -->
+            <div class="rip-hinweis">
+                <i class="fas fa-heart"></i> 
+                <span>REST IN PEACE</span>
+                <i class="fas fa-dove"></i>
+                <div class="rip-line">in loving memory</div>
             </div>
-            <!-- social links unchanged -->
+            
             <a href="https://discord.gg/ZSf4xb7NX7"><i class="fab fa-discord"></i></a>
             <a href="https://www.roblox.com/users/4823433390/profile">
-                <img class="roblox-icon" src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/5X/9/b/9/8/9b984a3ca6e4fc6bb40401c495d593012c0ee6f1.png" alt="Roblox Icon">
+                <img class="roblox-icon" src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-A8F10559DFA7FE0830096FB5E1A79AE7-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Roblox Icon">
             </a>
         </div>
         <div class="section-2">
@@ -223,7 +205,7 @@
             <h1>──────────────────</h1>
             <a href="https://www.roblox.com/games/17821499663/sell-stolen-stuff-to-people-tycoon">◼️ GAME</a>
             <p>◼️ sell stolen stuff to people tycoon (5K+ 🤍 45)</p>
-            <p>◼️ Jul 2024 - Current Job</p>
+            <p>◼️ Jul 2024 - Jan 2026</p>
             <p>◼️ Position: Tester</p>
             <h1>──────────────────</h1>
             <a href="https://www.roblox.com/games/18813208110/RoPlace-HALLOWEEN">◼️ GAME</a>
@@ -233,7 +215,7 @@
             <h1>──────────────────</h1>
             <a href="https://www.roblox.com/games/100307889170851/UPD-1-7-Tower-of-Stars">◼️ GAME</a>
             <p>◼️ Tower of Stars (10.1K+ 🤍 29+)</p>
-            <p>◼️ Oct 2024 - Jan 2025</p>
+            <p>◼️ Oct 2024 - Jan 2026</p>
             <p>◼️ Position: Owner/Management</p>
             <h1>──────────────────</h1>
             <p>Due to space constraints, I don't want to show any other works.</p>
